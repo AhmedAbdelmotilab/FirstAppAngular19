@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { AboutComponent } from '../about/about.component';
 
 @Component({
   selector: 'app-home',
-  imports: [AboutComponent],
+  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  title = 'FirstAppAngular19';
+  userAge: number = 25;
+  yourColorTrue: string = 'brown';
+  yourColorFalse: string = 'red';
 }

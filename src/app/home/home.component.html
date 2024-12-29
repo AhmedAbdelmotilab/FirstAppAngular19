@@ -1,5 +1,23 @@
-<div>
-  <h2>Hello From Home</h2>
-  <button class="btn btn-danger">From Home</button>
-  <app-about></app-about>
-</div>
+<!-- --------------------------------------------- Based On Condition ---------------------------------------------- -->
+<!-- ------------------------------------------- Using Ternary Operator -------------------------------------------- -->
+<h4 [style.background-color]="userAge>20?yourColorTrue:yourColorFalse">Hello Ahmed</h4>
+<!-- ------------------------ If I Want If True Return Color If False Not Return Any Color ------------------------- -->
+<h4 [style.background-color]="userAge>20?yourColorTrue:''">Hello Ahmed</h4>
+<!-- --------------------------------------------- Without TypeScript ---------------------------------------------- -->
+<h4 [style.background-color]="userAge>20?'red':'blue'">Hello Ahmed</h4>
+<h4 [style.background-color]="userAge>20?'red':''">Hello Ahmed</h4>
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------- MultiStyle -------------------------------------------------- -->
+<h4 [style]="{
+  'background-color':'red',
+  'text-align': 'center',
+}">Hello Ahmed</h4>
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------- With Condition ------------------------------------------------ -->
+<h4 [style]="{
+  'background-color':userAge>20?'red':'blue',
+}">Hello Ahmed</h4>
+<!-- ----------------------------------------------- From TypeScript ----------------------------------------------- -->
+<h4 [style]="{
+  'background-color':userAge>20?yourColorTrue:yourColorFalse,
+  }">Hello Ahmed</h4>
