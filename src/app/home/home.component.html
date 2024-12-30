@@ -1,23 +1,29 @@
-<!-- --------------------------------------------- Based On Condition ---------------------------------------------- -->
-<!-- ------------------------------------------- Using Ternary Operator -------------------------------------------- -->
-<h4 [style.background-color]="userAge>20?yourColorTrue:yourColorFalse">Hello Ahmed</h4>
-<!-- ------------------------ If I Want If True Return Color If False Not Return Any Color ------------------------- -->
-<h4 [style.background-color]="userAge>20?yourColorTrue:''">Hello Ahmed</h4>
-<!-- --------------------------------------------- Without TypeScript ---------------------------------------------- -->
-<h4 [style.background-color]="userAge>20?'red':'blue'">Hello Ahmed</h4>
-<h4 [style.background-color]="userAge>20?'red':''">Hello Ahmed</h4>
-<!-- --------------------------------------------------------------------------------------------------------------- -->
-<!-- ------------------------------------------------- MultiStyle -------------------------------------------------- -->
-<h4 [style]="{
-  'background-color':'red',
-  'text-align': 'center',
-}">Hello Ahmed</h4>
-<!-- --------------------------------------------------------------------------------------------------------------- -->
-<!-- ----------------------------------------------- With Condition ------------------------------------------------ -->
-<h4 [style]="{
-  'background-color':userAge>20?'red':'blue',
-}">Hello Ahmed</h4>
-<!-- ----------------------------------------------- From TypeScript ----------------------------------------------- -->
-<h4 [style]="{
-  'background-color':userAge>20?yourColorTrue:yourColorFalse,
-  }">Hello Ahmed</h4>
+<section>
+  <div class="container ">
+    <div class="row g-5">
+      @for(product of productList;track product.id){
+      <div class="col-md-4">
+        <div class="card" [class.bg-success]="product.onSale">
+          <img class="card-img-top" [src]="product.imageCover" alt="Title" />
+          <div class="card-body">
+            <h4 class="card-title">ID: {{product.id}}</h4>
+            <h4 class="card-title">Title: {{product.title}}</h4>
+            <p class="card-text">Description: {{product.description}}</p>
+            <p class="card-text">Price: {{product.price}}</p>
+            <p class="card-text">OnSale: {{product.onSale}}</p>
+            <div class="row g-5">
+              @for (productImage of product.images; track $index) {
+              <div class="col-md-3">
+                <img class="w-100" [src]="productImage" alt="ProductImage">
+              </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      }@empty {
+      <h2>Not Data Founded</h2>
+      }
+    </div>
+  </div>
+</section>
